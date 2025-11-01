@@ -18,10 +18,10 @@ A simple and elegant **ToDo application** built with **React Native** and **Conv
 ## Screenshots
 
 * **Dark Mode Screen**
-  <img src="assets/images/homescreen.jpeg" alt="Main Screen" width="400" />
+  <img src="./images/darkmode.jpg" alt="Main Screen" width="400" />
 
 * **Light Mode Screen**
-  <img src="assets/images/allproducts.jpeg" alt="Main Screen" width="400" />
+  <img src="./images/lightmode.jpg" alt="Main Screen" width="400" />
 ---
 
 
