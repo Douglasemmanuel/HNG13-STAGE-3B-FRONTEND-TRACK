@@ -40,7 +40,7 @@ export default function HomeScreen() {
 
     try {
       await createTodo({ title: text, completed: false }); 
-      setText(''); // clear input after creation
+      setText(''); 
     } catch (error) {
       console.error('Error creating todo:', error);
     }
@@ -63,12 +63,16 @@ export default function HomeScreen() {
                 position: 'relative',
               }]}
             resizeMode="cover" >
-            <View style={{}}>
+            <View style={{
+           
+            }}>
               <View
               style={{
                 width:'100%' ,
-                // alignItems:'center',
-                justifyContent:'center'
+                alignItems:'center',
+                // paddingLeft:50,
+                // paddingRight:50,
+                //  paddingHorizontal: Platform.OS === 'web' ? '20%' : 26,
               }}
               >
                           <View
@@ -76,12 +80,13 @@ export default function HomeScreen() {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'space-between' ,
-    // height: height , 
-    // width: width ,  
-    // justifyContent:'center' ,
+    // gap:50,
+      width: '100%',
+      maxWidth: 700, 
+      paddingHorizontal: 50,
     paddingTop: Platform.OS === 'web' ?  70 : 48 ,
-    paddingLeft: Platform.OS === 'web' ? 450 : 26  ,   
-    paddingRight: Platform.OS === 'web' ?  450: 26 , 
+    // paddingLeft: Platform.OS === 'web' ? 450 : 26  ,   
+    // paddingRight: Platform.OS === 'web' ?  450: 26 , 
   }}
 >
   <Text
@@ -298,43 +303,43 @@ export default function HomeScreen() {
     }}
   >
     <Pressable style={{ paddingHorizontal: 10 }} onPress={() => setFilter('all')}>
-      <Text
-        style={{
-          fontSize: 14,
-          fontWeight: '700',
-          fontFamily: 'Josefin Sans',
-          color: isDarkMode ? '#5B5E7E' : '#9495A5',
-        }}
-      >
-        All
-      </Text>
-    </Pressable>
+    <Text
+      style={{
+        fontSize: 14,
+        fontWeight: '700',
+        fontFamily: 'Josefin Sans',
+        color: filter === 'all' ? 'blue' : isDarkMode ? '#5B5E7E' : '#9495A5',
+      }}
+    >
+      All
+    </Text>
+  </Pressable>
 
-    <Pressable style={{ paddingHorizontal: 10 }} onPress={() => setFilter('active')}>
-      <Text
-        style={{
-          fontSize: 14,
-          fontWeight: '700',
-          fontFamily: 'Josefin Sans',
-          color: isDarkMode ? '#5B5E7E' : '#9495A5',
-        }}
-      >
-        Active
-      </Text>
-    </Pressable>
+  <Pressable style={{ paddingHorizontal: 10 }} onPress={() => setFilter('active')}>
+    <Text
+      style={{
+        fontSize: 14,
+        fontWeight: '700',
+        fontFamily: 'Josefin Sans',
+        color: filter === 'active' ? 'blue' : isDarkMode ? '#5B5E7E' : '#9495A5',
+      }}
+    >
+      Active
+    </Text>
+  </Pressable>
 
-    <Pressable style={{ paddingHorizontal: 10 }} onPress={() => setFilter('completed')}>
-      <Text
-        style={{
-          fontSize: 14,
-          fontWeight: '700',
-          fontFamily: 'Josefin Sans',
-          color: isDarkMode ? '#5B5E7E' : '#9495A5',
-        }}
-      >
-        Completed
-      </Text>
-    </Pressable>
+  <Pressable style={{ paddingHorizontal: 10 }} onPress={() => setFilter('completed')}>
+    <Text
+      style={{
+        fontSize: 14,
+        fontWeight: '700',
+        fontFamily: 'Josefin Sans',
+        color: filter === 'completed' ? 'blue' : isDarkMode ? '#5B5E7E' : '#9495A5',
+      }}
+    >
+      Completed
+    </Text>
+  </Pressable>
   </View>
 </View>
 
