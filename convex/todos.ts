@@ -32,6 +32,7 @@ handler:async(ctx , args)=>{
 
 
 
+
 export const getAllTodos = query({
     args :{},
     handler : async (ctx , args) =>{
@@ -84,3 +85,19 @@ export const deleteSingleTodo = mutation({
         
     },
 })
+
+
+
+export const DeleteAllCompletedTodo = mutation({
+  args: {},
+  handler: async (ctx) => {
+    
+    const completedTodos = await ctx.db.query("todo").filter((q) => q.eq(q.field("completed"), true)).collect();
+
+    for (const todo of completedTodos) {
+      await ctx.db.delete(todo._id);
+    }
+
+    return { success: true, deletedCount: completedTodos.length };
+  },
+});

@@ -16,12 +16,22 @@ export const getThemeColors = (themeMode: ThemeMode): ThemeColors => {
   const isDark = themeMode === 'dark'
 
   return {
-    background: isDark ? '#000' : '#F5F5F5',
-    text: isDark ? '#fff' : '#000',
-    card: isDark ? '#1e1e1e' : '#f9f9f9',
-    border: isDark ? '#333' : '#ddd',
-    icon: isDark ? '#fff' : '#000',
+    background: isDark ? '#171823' : '#FAFAFA',
+    text: isDark ? '#C8CBE7' : '#494C6B',
+    card: isDark ? '#494C6B' : '#f9f9f9',
+    border: isDark ? '#393A4B' :  '#FFFFFF',
+    icon: isDark ? '#393A4B' : '#E3E4F1',
     inputBackground: isDark ? '#1a1a1a' : '#f0f0f0',
    
   }
 }
+
+
+
+
+
+
+
+
+
+
