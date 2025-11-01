@@ -79,9 +79,9 @@ export default function HomeScreen() {
     // height: height , 
     // width: width ,  
     // justifyContent:'center' ,
-    paddingTop: Platform.OS === 'android' ? 48 : 70,   
-    paddingLeft: Platform.OS === 'android' ? 26 : 450,   
-    paddingRight: Platform.OS === 'android' ? 26 : 450, 
+    paddingTop: Platform.OS === 'web' ?  70 : 48 ,
+    paddingLeft: Platform.OS === 'web' ? 450 : 26  ,   
+    paddingRight: Platform.OS === 'web' ?  450: 26 , 
   }}
 >
   <Text
@@ -109,7 +109,7 @@ export default function HomeScreen() {
   style={{
     width: '100%',
     alignItems: 'center', 
-    paddingTop: Platform.OS === 'android' ? 10 : 70, 
+    paddingTop: Platform.OS === 'web' ? 70 : 10, 
   }}
 >
   <View
